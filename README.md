@@ -1,5 +1,5 @@
 
-![E-CART](public/img-preentrega1+Cordoba.PNG)
+![E-CART](public/img-preentrega1Cordoba.PNG)
 
 ### Descripción:
 
