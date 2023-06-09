@@ -1,17 +1,34 @@
 import { Drawer, List, ListItem, ListItemIcon, ListItemText, IconButton, Button } from '@mui/material'
 import { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-Button
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+
 export const DrawerComp = ({ pag }) => {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   return (
     <>
-      <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
+      <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
+          <ListItem >
+            <ListItemIcon style={{ justifyContent: 'flex-start' }}>
+              <ArrowBackIosIcon sx={{ fontSize: 13 }} />
+            </ListItemIcon>
+            <ListItemText>
+              <Button
+              
+                onClick={console.warn('Not Implemented yet...')}
+                sx={{ my: 0, color: 'black', display: 'block' }}
+              >
+                Categorias
+              </Button>
+            </ListItemText>
+          </ListItem>
           {pag.map((page) => (
             <ListItem key={page}>
+              <ListItemIcon style={{ justifyContent: 'flex-start' }}>
+                <ArrowBackIosIcon sx={{ fontSize: 13 }} />
+              </ListItemIcon>
               <ListItemText>
                 <Button
                   key={page}
@@ -21,9 +38,6 @@ export const DrawerComp = ({ pag }) => {
                   {page}
                 </Button>
               </ListItemText>
-              <ListItemIcon style={{ justifyContent: 'flex-end' }} >
-                <ArrowForwardIosIcon sx={{ fontSize: 13 }} />
-              </ListItemIcon>
             </ListItem>
           ))}
         </List>

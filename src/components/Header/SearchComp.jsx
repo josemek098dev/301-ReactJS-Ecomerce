@@ -15,10 +15,10 @@ export const SearchComp = () => {
         width: '100%',
         [theme.breakpoints.up('sm')]: {
             marginLeft: theme.spacing(1),
-            width: 'auto',
+            width: '',
         },
         [theme.breakpoints.down('md')]: {
-            display: 'none', // Oculta el componente en dispositivos móviles
+            display: '', // Oculta el componente en dispositivos móviles
         },
     }));
     const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -39,9 +39,9 @@ export const SearchComp = () => {
             transition: theme.transitions.create('width'),
             width: '100%',
             [theme.breakpoints.up('sm')]: {
-                width: '12ch',
+                width: '20ch',
                 '&:focus': {
-                    width: '20ch',
+                    width: '24ch',
                 },
             },
         },

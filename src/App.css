@@ -1,0 +1,29 @@
+*{
+    font-family: 'Public Sans', sans-serif;
+}
+body{
+
+    color:#393a49
+}
+
+
+.react-multi-carousel-list{
+  position: unset !important;
+  
+}
+
+.Link {
+  
+  color:#393a49;
+  text-decoration: none;
+}
+
+.Link:hover {
+  color:#393a49;
+  border-bottom: 3px solid #3cbaba;
+}
+
+.LinkHome{
+  color:#3cbaba;
+  text-decoration: none;
+}
