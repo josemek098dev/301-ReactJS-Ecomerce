@@ -1,0 +1,59 @@
+@media (max-width: 1000px) {
+
+  /* Agrega la siguiente regla para posicionar el navbar encima del contenido */
+  .navbar {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .media-flex {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cart {
+    position: absolute !important;
+    top: 10px !important;
+
+    z-index: 99;
+  }
+
+  .brand{
+
+    position: absolute !important;
+    top: 10px !important;
+    right: 20px ;
+    z-index: 99;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-20% , -20%);
+    -webkit-transform: translate(-20%, -20%);
+
+
+  }
+
+
+
+}
+
+.navbar {
+
+    z-index: 5;
+  }
+
+
+.cart {
+    position: absolute !important;
+    top: 2px !important;
+    right: 5% ;
+    z-index: 99;
+  }

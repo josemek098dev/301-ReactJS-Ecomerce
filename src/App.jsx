@@ -16,8 +16,7 @@ export const App = () => {
   return (
     <Box
       sx={{
-        padding: { xs: "2% 3%", md: "0 10%" },
-        maxWidth: { md: 1920 }, // Establecer el ancho máximo en 1080px en pantallas más grandes que "md" (1080px)
+     
         margin: "0 auto", // Centrar el contenido horizontalmente
       }}
     >

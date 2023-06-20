@@ -3,6 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import './ItemCard.css'
 
+
 export const ItemCard = () => {
 
   const buynow = (<Row className="align-self-end flex-column my-2">

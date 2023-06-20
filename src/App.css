@@ -34,3 +34,28 @@ body {
 .f-14px {
   font-size: 14px;
 }
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 ; 
+  
+}
+
+.navbar-toggler{
+  border: ;
+  
+}
+
+.navbar>.container{
+
+  max-width: none !important;
+  padding: 0 5vh;
+}
+
+.MuiBadge-badge{
+  font-size: 10px !important;
+  height: 15px !important;
+  width: 15px !important;
+  min-width: 0px !important;
+}
