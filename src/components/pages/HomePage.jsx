@@ -1,16 +1,17 @@
 
 import { ItemListContainer } from "../ItemListContainer/ItemListContainer";
-import { DealsContainer } from "../DealsContainer/DealsContainer";
-import { CategoriesContainer } from "../CategoriesContainer/CategoriesContainer";
-import { CarouselEcart } from "../CarouselEcart/CarouselEcart";
+
+
+import { BannerStart } from "../BannerStart/BannerStart";
+import { BannerEnd } from "../BannerEnd/BannerEnd";
 
 export const HomePage = () => {
   return (
     <>
-      <CarouselEcart />
+      <BannerStart/>
       <ItemListContainer />
-      <DealsContainer />
-      <CategoriesContainer />
+      
+      <BannerEnd/>
     </>
   )
 }

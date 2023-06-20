@@ -1,29 +1,36 @@
-*{
-    font-family: 'Public Sans', sans-serif;
-}
-body{
+* {
+  font-family: 'Public Sans', sans-serif;
 
-    color:#393a49
+
 }
 
-
-.react-multi-carousel-list{
-  position: unset !important;
+Button{
   
+  border-radius: 0 !important;
 }
+
+body {
+
+  color: #393a49
+}
+
 
 .Link {
-  
-  color:#393a49;
+
+  color: #393a49;
   text-decoration: none;
 }
 
 .Link:hover {
-  color:#393a49;
+  color: #393a49;
   border-bottom: 3px solid #3cbaba;
 }
 
-.LinkHome{
-  color:#3cbaba;
+.LinkHome {
+  color: #3cbaba;
   text-decoration: none;
+}
+
+.f-14px {
+  font-size: 14px;
 }

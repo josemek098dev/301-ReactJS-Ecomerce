@@ -1,66 +1,61 @@
-import React, { useState } from "react";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import './ItemCard.css'
 
-export const ItemCard = ({ img, title,price }) => {
-  const [isHovered, setIsHovered] = useState(false);
+export const ItemCard = () => {
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
+  const buynow = (<Row className="align-self-end flex-column my-2">
+    <Col className="f-14px">Save up to $250 and get 50% on OnePlus Buds Pro 2.</Col>
+    <Col className="h4 my-2">$444</Col>
+    <Col><Button variant="dark" className="px-4" >Buy now</Button></Col>
+  </Row>)
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
 
   return (
-    <Card
-      style={{
-        width: '95%',
-        height: '357px',
-        margin: '6%',
-        transition: 'box-shadow 0.3s',
-        boxShadow: isHovered ? '0 0 5px rgba(0, 0, 0, 0.3)' : 'none',
-      }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <Card.Body>
-        <div
-          className="image-container"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "200px",
-            maxWidth: "100%",
-          }}
-        >
-          <img src={img} alt="image" style={{ maxHeight: '200px', maxWidth: '100%' }} />
-        </div>
-        <hr />
+    <>
 
-        <Card.Text style={{ fontSize: '1.3rem', textAlign: 'left' }}>
-          U$A {price}
-        </Card.Text>
+      <Col xs={12} md={6} className="d-none d-lg-block p-0">
+        <Row className="bg-custom m-2 py-3 px-1">
+          <Col xs={12} md={6} className=" d-flex justify-content-between ">
+            <Row >
+              <Col xs={12} md={12} className=" h3 mt-2">OnePlus 10 Pro</Col>
+              <Col xs={12} md={12} className=" d-flex">{buynow}
 
-        <Card.Title
-          style={{
-            fontSize: '.87rem',
-            textAlign: 'left',
-            color: 'gray',
-            paddingTop: '5px',
-            display: '-webkit-box',
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-          }}
-        >
-          {title}
-        </Card.Title>
-      </Card.Body>
-    </Card>
+              </Col>
+            </Row>
+          </Col>
+          <Col xs={12} md={6} className="  d-flex aling-content-center" ><img src="/assets/img-prueba.JPG" alt="Imagen de prueba" className="imagen" /></Col>
+        </Row>
+
+      </Col>
+
+
+      <Col xs={12} sm={6} md={6} className="d-none d-sm-block d-lg-none p-0">
+        <Row className="bg-custom m-2 py-3 px-1">
+          <Col xs={12} md={12} className=" h3 mt-2">OnePlus 10 Pro</Col>
+          <Col xs={12} md={12} ><img src="/assets/img-prueba.JPG" alt="Imagen de prueba" className="imagen" /></Col>
+          <Col xs={12} md={12} >
+            {buynow}
+          </Col>
+        </Row>
+      </Col>
+
+
+      <Col xs={12} md={6} className="d-block d-sm-none p-0">
+        <Row className="bg-custom m-2 py-3 px-1">
+          <Col xs={12} md={6} className=" h3 mt-2">OnePlus 10 Pro</Col>
+          <Col xs={12} md={6}  ><img src="/assets/img-prueba.JPG" alt="Imagen de prueba" className="imagen" /></Col>
+          <Col xs={12} md={12} >
+            {buynow}
+          </Col>
+        </Row>
+      </Col>
+
+
+    </>
   );
+
+
 };
 
