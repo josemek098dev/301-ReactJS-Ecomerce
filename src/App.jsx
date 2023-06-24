@@ -4,13 +4,10 @@ import './App.css';
 import { Footer } from "./components/Footer/Footer";
 import Box from "@mui/material/Box";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { HomePage } from "./components/pages/HomePage";
-import { ModaPage } from "./components/pages/ModaPage";
-import { TecnologiaPage } from "./components/pages/TecnologiaPage";
-import { ErrorPage } from "./components/pages/ErrorPage";
-import { OfertasPage } from "./components/pages/OfertasPage";
-import { ItemIdPage } from "./components/pages/ItemIdPage";
+import { HomePage } from "./pages/HomePage"
+import { ErrorPage } from "./pages/ErrorPage";
 
+import { ByCategoryItemContainerPage } from "./pages/CategoryPage";
 
 export const App = () => {
   return (
@@ -24,24 +21,17 @@ export const App = () => {
       <Router>
         <Header />
         <Routes>
-
           <Route path="/" element={<HomePage />} />
-          <Route path="/item/:id" element={<ItemIdPage />} />
-          <Route path="/category/ofertas" element={<OfertasPage />} />
-          <Route path="/category/tecnologia" element={<TecnologiaPage />} />
-          <Route path="/category/moda" element={<ModaPage />} />
+          <Route path="/item/:id" element={<HomePage />} />          
+          <Route
+              path="/category/:position"
+              element={<ByCategoryItemContainerPage />}
+            />
+
           <Route path="*" element={<ErrorPage />} />
-
-
         </Routes>
         <Footer />
       </Router>
-
-
-
-
-   
-
     </Box>
   );
 };
