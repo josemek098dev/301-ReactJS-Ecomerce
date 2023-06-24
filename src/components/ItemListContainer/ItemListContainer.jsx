@@ -1,17 +1,15 @@
 import { ItemCard } from "./ItemCard";
-
-import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import "./ItemListContainer.css"
+import { Link } from "react-router-dom";
 
 export const ItemListContainer = () => {
 
 
   return (
 
-    <Container className="max-width-container">
+    <Container className="max-width-container mt-5">
       <Row >
 
         <ItemCard />
@@ -24,6 +22,16 @@ export const ItemListContainer = () => {
         <ItemCard />
 
       </Row>
+
+      <Link
+        to='/category/AllItemsPage'
+        style={{ textDecoration: "none", color: "inherit" }}
+        key=""
+      >
+
+        <div className="d-flex justify-content-center mt-4 mb-5">View all &nbsp; <i className="bi bi-chevron-right"></i></div>
+      </Link>
+
     </Container>
 
 
