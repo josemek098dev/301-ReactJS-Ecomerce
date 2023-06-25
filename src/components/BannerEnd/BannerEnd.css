@@ -3,8 +3,8 @@
     max-width: 100%;
 }
 
-.image-banner-margin {
-    margin-left: -25%;
+.image-banner-margin-end {
+ 
     margin-bottom: 6%;
 }
 
@@ -16,13 +16,12 @@
   }
 
 
-.custom-color {
-    color: #F1F2F2;
+.custom-color-end {
+    color: #ffffff;
 }
 
 
-.bg-image-banner {
-    background: rgb(4,12,20);
-    background: linear-gradient(29deg, rgba(4,12,20,1) 15%, rgba(43,66,74,1) 55%, rgba(3,10,16,1) 89%);
+.bg-image-banner-end {
+    background: #000;
   
 }

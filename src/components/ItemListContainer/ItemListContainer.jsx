@@ -24,7 +24,7 @@ export const ItemListContainer = () => {
       </Row>
 
       <Link
-        to='/category/AllItemsPage'
+        to='/category/allItems'
         style={{ textDecoration: "none", color: "inherit" }}
         key=""
       >

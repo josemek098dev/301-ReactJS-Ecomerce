@@ -5,12 +5,7 @@ import { ItemCard } from "../ItemListContainer/ItemCard";
 export const ItemDetailContainer = () => {
 
     let { id } = useParams();
-
-
-
     const products = useProducts();
-
-
 
 
     return (

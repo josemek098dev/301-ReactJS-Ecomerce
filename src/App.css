@@ -14,10 +14,13 @@ body {
   color: #393a49
 }
 
+a{
+  color: inherit !important;
+}
 
 .Link {
 
-  color: #393a49;
+  color: #393a49 !important;
   text-decoration: none;
 }
 
@@ -43,7 +46,7 @@ body {
 }
 
 .navbar-toggler{
-  border: ;
+  margin-left: -20px;
   
 }
 

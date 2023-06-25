@@ -1,6 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 import './ItemCard.css'
 
 
@@ -9,7 +10,20 @@ export const ItemCard = () => {
   const buynow = (<Row className="align-self-end flex-column my-2">
     <Col className="f-14px">Save up to $250 and get 50% on OnePlus Buds Pro 2.</Col>
     <Col className="h4 my-2">$444</Col>
-    <Col><Button variant="dark" className="px-4" >Buy now</Button></Col>
+
+    <Col>
+
+      <Link
+        to='/category/phones'
+        style={{ textDecoration: "none"}}
+        key=""
+      >
+        <Button variant="dark" className="px-4" >Buy now</Button>
+
+      </Link>
+
+    </Col>
+
   </Row>)
 
 
