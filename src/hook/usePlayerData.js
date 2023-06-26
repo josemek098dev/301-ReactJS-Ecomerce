@@ -5,17 +5,20 @@ import { getPlayerData } from '../helpers/getPlayerData';
 export const usePlayerData = () => {
   const [playersDataByPosition, setPlayersByPosition] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { position } = useParams();
+  const { position = 'defender'  } = useParams();
+  const { id  } = useParams();
+
+
 
   useEffect(() => {
     const fetchData = async () => {
-      const playersData = await getPlayerData(position); 
+      const playersData = await getPlayerData(position,id); 
       setPlayersByPosition(playersData);
       setIsLoading(false);
     };
 
     fetchData();
-  }, [position]);
+  }, [position,id]);
 
   return { isLoading, playersDataByPosition };
 };

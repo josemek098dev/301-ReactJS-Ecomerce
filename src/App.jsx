@@ -8,6 +8,7 @@ import { HomePage } from "./pages/HomePage"
 import { ErrorPage } from "./pages/ErrorPage";
 
 import { ByCategoryItemContainerPage } from "./pages/CategoryPage";
+import { ItemDetailPage } from "./pages/ItemDetailPage";
 
 export const App = () => {
   return (
@@ -22,7 +23,7 @@ export const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/item/:id" element={<HomePage />} />          
+          <Route path="/player-detail/:id" element={<ItemDetailPage />} />          
           <Route
               path="/category/:position"
               element={<ByCategoryItemContainerPage />}

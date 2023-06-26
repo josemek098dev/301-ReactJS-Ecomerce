@@ -1,12 +1,22 @@
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, documentId, } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
 
-export const getPlayerData = async (position) => {
+export const getPlayerData = async (position, id) => {
+
+
   let q;
-  if (position !== 'allItems') {
+
+  if (id) {
+
+
+    q = query(collection(db, "playersCollection"), where(documentId(), "==", id));
+    console.log(id)
+  } else if ((position !== 'allItems') && ' ') {
+
     // OJO CAMBIAR ACA POSITION POR OTRA CATEGORIES
     // TALVEZ AGREGAR UNA CATEGORIA HOME PARA LOS ITEMS DEL HOME
     q = query(collection(db, "playersCollection"), where("position", "==", position));
+
   } else {
     q = query(collection(db, "playersCollection"));
   }

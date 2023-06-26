@@ -32,9 +32,9 @@ export const AllItemsContainer = ({ isLoading, playersData }) => {
                     </Col>
 
                     <Col>
-                        <Link to="/category/phones" style={{ textDecoration: 'none' }} key="">
+                        
                             <RenderPlayers isLoading={isLoading} playersData={playersData} />
-                        </Link>
+                    
 
                     </Col>
                 </Row>
