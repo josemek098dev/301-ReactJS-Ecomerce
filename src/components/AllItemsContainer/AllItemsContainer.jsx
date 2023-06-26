@@ -4,13 +4,13 @@ import { Container, Row } from 'react-bootstrap'
 import Col from 'react-bootstrap/Col';
 import './AllItemCard.css'
 import 'animate.css'
-import { Link } from "react-router-dom";
+
 
 export const AllItemsContainer = ({ isLoading, playersData }) => {
 
 
     const RenderPlayers = ({ isLoading, playersData }) => {
-        if (isLoading) {
+        if (isLoading ) {
             return <div className="Spinner">cargando...</div>;
         }
 
@@ -32,9 +32,9 @@ export const AllItemsContainer = ({ isLoading, playersData }) => {
                     </Col>
 
                     <Col>
-                        
-                            <RenderPlayers isLoading={isLoading} playersData={playersData} />
-                    
+
+                        <RenderPlayers isLoading={isLoading} playersData={playersData} />
+
 
                     </Col>
                 </Row>

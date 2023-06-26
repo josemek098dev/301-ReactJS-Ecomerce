@@ -12,7 +12,7 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
 
   const buynow = (
 
-    <Row className="align-self-end  flex-column my-2 bg-primary w-100 ">
+    <Row className="align-self-end  flex-column my-2 w-100 ">
       <Col className="f-14px">Save up to $250 and get 50% on OnePlus Buds Pro 2.</Col>
       <Col className="h4 my-2">$444</Col>
       <Col>
@@ -21,8 +21,11 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
           style={{ textDecoration: "none" }}
           key=""
         >
-          <Button variant="dark" className=" w-50 mt-2" >Add to cart</Button>
-          <Button variant="danger" className=" w-50 mt-2" >Buy now</Button>
+          <Row >
+            <Col  ><Button variant="dark" className=" w-100 " >Add to cart</Button></Col >
+            <Col  ><Button variant="danger" className=" w-100 " >Buy now</Button></Col >
+          </Row>
+
         </Link>
       </Col>
     </Row>
@@ -40,7 +43,7 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
           <Col xs={6} md={6} className=" d-flex justify-content-between ">
             <Row >
               <Col xs={12} md={12} className=" h3 mt-2">OnePlus 10 Pro XS 12 MD 12</Col>
-              <Col xs={12} md={12} className=" d-flex bg-danger justify-content-center w-100 ">
+              <Col xs={12} md={12} className=" d-flex justify-content-center w-100 ">
                 {buynow}
               </Col>
             </Row>

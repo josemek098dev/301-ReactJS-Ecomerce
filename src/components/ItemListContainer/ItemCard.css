@@ -5,6 +5,15 @@
   object-fit: contain; /* La imagen se ajustará manteniendo su relación de aspecto */
 }
 
+.image-zoom-hover {
+  transition: transform 0.3s ease;
+}
+
+.image-zoom-hover:hover{
+
+  transform: scale(1.15);
+}
+
 .bg-custom{
 
   background-color: #f8f8f8;

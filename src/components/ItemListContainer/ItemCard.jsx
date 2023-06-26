@@ -31,6 +31,9 @@ export const ItemCard = ({ playersDataByPosition , idx}) => {
   </Row>)
 
 
+
+
+
   return (
     <>
 
@@ -50,7 +53,7 @@ export const ItemCard = ({ playersDataByPosition , idx}) => {
               style={{ textDecoration: "none" }}
               key=""
             >
-              <img src={playersDataByPosition[idx]?.img || ''} alt="Imagen de prueba" className="imagen" />
+              <img src={playersDataByPosition[idx]?.img || ''} alt="Imagen de prueba" className="imagen image-zoom-hover" />
             </Link>
           </Col>
         </Row>

@@ -10,7 +10,31 @@
     justify-content: center;
 }
 
-.row{
-    display:flex;
-    
+.row {
+    display: flex;
+
 }
+
+.hover-right {
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow-container {
+
+    transition: transform 0.3s ease;
+
+
+  }
+
+  .hover-right:hover .arrow-container {
+    transform: translateX(15px);
+  }
+  
+  .arrow-container {
+    display: inline-block;
+  }
+  
+  .hold {
+    display: inline-block;
+  }
+  

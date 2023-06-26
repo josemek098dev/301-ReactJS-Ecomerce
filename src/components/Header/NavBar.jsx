@@ -53,7 +53,7 @@ export const NavBar = () => {
               {categories.map((category) => (               
 
                   <NavLink
-                    className={({ isActive }) => `nav-item nav-link NavLink ${isActive ? 'active' : ''}`}
+                    className={({ isActive }) => `hvr-underline-from-left nav-item nav-link NavLink ${isActive ? 'active' : ''}`}
                     onClick={() => {
                    
                       setExpanded(false);
