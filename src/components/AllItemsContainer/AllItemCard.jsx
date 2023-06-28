@@ -41,7 +41,7 @@ export const AllItemCard = ({ data, loadState }) => {
 
   return (
     
-    <Col xs={12} sm={4} md={4} className={`d-none d-sm-block d-lg-block p-0 `} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <Col xs={6} sm={6} md={6} xl={4} className='p-0' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Row className='m-2 py-3 px-1'>
         <Link to={`/player-detail/${data.id}`} style={{ textDecoration: 'none' }} key=''>
           <Col xs={12} md={12}>
@@ -53,5 +53,8 @@ export const AllItemCard = ({ data, loadState }) => {
         </Link>
       </Row>
     </Col>
+
+
+
   );
 };
