@@ -59,3 +59,23 @@
     cursor: pointer;
     user-select: none;
   } 
+
+
+  .bi-trash{
+
+    color: #a4a4a4
+  }
+
+  .bi-trash:hover{
+
+    color: #383838
+  }
+
+  .card-cart{
+
+    border: 1px rgb(236, 236, 236) solid;
+
+    border-radius: 0;
+    margin-top: -1px
+
+  }

@@ -4,12 +4,17 @@ import Row from 'react-bootstrap/Row';
 
 import { Link } from "react-router-dom";
 import { ItemCardDetail } from './ItemCardDetail';
+import { useEffect } from 'react';
 
 export const ItemDetailContainer = ({ isLoading, playersDataByPosition }) => {
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
    <div className="bg-custom  ">
-    <Container className="max-width-container align-items-center d-flex" style={{height:'90vh'}}>
+    <Container className="max-width-container align-items-center d-flex" style={{height:'80vh'}}>
       <Row >
         
 

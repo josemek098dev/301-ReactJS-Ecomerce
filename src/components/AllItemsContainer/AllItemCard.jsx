@@ -3,12 +3,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { BuyButton } from './ui/BuyButton';
 import { Link } from 'react-router-dom';
-import './ui/revealimage.css'
+import './ui/revealimage.css';
+import { useInView } from 'react-intersection-observer';
 
-
-
-export const AllItemCard = ({ data , loadState}) => {
+export const AllItemCard = ({ data, loadState }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
 
   const ChildImgLoaded = () => {
     loadState(true)
@@ -23,58 +25,33 @@ export const AllItemCard = ({ data , loadState}) => {
   };
 
   const renderImage = () => (
-
-    <div className="box1">
-      <div className="content1">
+    <div className='box1'>
+      <div className={` ${inView ? 'content1' : ''}`}>
         <img
-          loading="lazy"
+          loading='lazy'
           src={data.img}
-          alt="Imagen de prueba"
-          className="imagen " 
+          alt='Imagen de prueba'
+          className={`imagen `}
           onLoad={ChildImgLoaded}         
-          />
-          
+          ref={ref}
+        />
       </div>
     </div>
   );
 
-  //handleloading
-
   return (
-    <>
-
-      <Col xs={12} sm={4} md={4} className="d-none d-sm-block d-lg-block p-0" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-
-        <Row className="m-2 py-3 px-1">
-          <Link to={`/player-detail/${data.id}`} style={{ textDecoration: 'none' }} key="">
-            <Col xs={12} md={12}>
-
-              {renderImage()}
-
-            </Col>
-            <Col xs={12} md={12}>
-              <BuyButton isHovered={isHovered} />
-            </Col>
-          </Link>
-        </Row>
-
-      </Col>
-      <Col xs={6} md={6} className="d-block d-sm-none p-0">
-        <Row className="bg-custom m-2 py-3 px-1">
-
-          <Link to={`/player-detail/${data.id}`} style={{ textDecoration: 'none' }} key="">
-
-            <Col xs={12} md={6}>
-              {renderImage()}
-            </Col>
-            <Col xs={12} md={12}>
-              <BuyButton isHovered={isHovered} />
-            </Col>
-
-          </Link>
-
-        </Row>
-      </Col>
-    </>
+    
+    <Col xs={12} sm={4} md={4} className={`d-none d-sm-block d-lg-block p-0 `} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <Row className='m-2 py-3 px-1'>
+        <Link to={`/player-detail/${data.id}`} style={{ textDecoration: 'none' }} key=''>
+          <Col xs={12} md={12}>
+            {renderImage()}
+          </Col>
+          <Col xs={12} md={12}>
+            <BuyButton isHovered={isHovered} />
+          </Col>
+        </Link>
+      </Row>
+    </Col>
   );
 };

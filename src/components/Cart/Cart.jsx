@@ -9,8 +9,7 @@ import { Link } from "react-router-dom";
 export const Cart = () => {
   const { items, setItems, itemsCount, setItemsCount } = useContext(ItemsContext);
   
-  const [showItems, setShowItems] = useState(true);
-  const [count, setCount] = useState(0);
+
 
   const itemCountMap = new Map();
   items.forEach((item) => {
@@ -97,8 +96,8 @@ export const Cart = () => {
         <div className="d-flex justify-content-center">
           <div className="col-md-8">
             {uniqueItems.map(({ item, count }) => (
-              showItems && (
-                <Card key={item[0].id} className="my-1">
+            
+                <Card key={item[0].id} className="card-cart ">
                   <Row>
                     <Col md={3} className="align-items-center d-flex justify-content-center">
                       <Card.Img
@@ -139,12 +138,12 @@ export const Cart = () => {
 
                     <Col md={1} className="align-items-center d-flex ">
                       <span className="x px-2" onClick={() => deleteItems(item[0].id)}>
-                        X
+                      <i className="bi bi-trash" ></i>
                       </span>
                     </Col>
                   </Row>
                 </Card>
-              )
+              
             ))}
           </div>
         </div>
@@ -157,7 +156,7 @@ export const Cart = () => {
         <Col md={3} className="d-flex align-items-stretch justify-content-center d-flex  m-0 ">
           <Link to="/checkout">
             <Button variant="danger" className="py-4 px-5 but">
-              Buy now ({totalItemCount})
+              Checkout ({totalItemCount})
             </Button>
           </Link>
         </Col>

@@ -32,8 +32,8 @@
   height: 100%;
   background: #ffffff;
   z-index: 1;
-  animation: reveal .5s reverse forwards;
-  animation-delay: .8s;
+  animation: reveal .4s reverse forwards;
+  animation-delay: .4s;
   transform-origin: right;
 }
 

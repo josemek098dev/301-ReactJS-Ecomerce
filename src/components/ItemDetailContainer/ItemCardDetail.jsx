@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import { ItemsContext } from "../../context/ItemsContext";
 import { useContext } from "react";
-
+import 'animate.css'
 
 export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
 
@@ -47,7 +47,7 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
   };
   
   
-  console.log(itemsCount)
+
 
 
   return (
@@ -56,7 +56,7 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
       <Col xs={12} md={12} className="d-none d-sm-block d-lg-block p-0 ">
         <Row className="bg-custom m-2 py-3 px-1">
           <Col xs={6} md={6} className="  d-flex aling-content-center" >
-            <img src={data?.img || ''} loading="lazy" alt="Imagen de prueba" className="imagen" />
+            <img src={data?.img || ''} loading="lazy" alt="Imagen de prueba" className="imagen animate__animated animate__fadeIn" />
           </Col>
           <Col xs={6} md={6} className=" d-flex justify-content-between ">
             <Row >
@@ -73,7 +73,7 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
         <Row className="bg-custom m-2 py-3 px-1">
           <Col xs={12} md={6} className=" h3 mt-2">OnePlus 10 Pro XS</Col>
           <Col xs={12} md={6}  >
-            <img src={data?.img || ''} loading="lazy" alt="Imagen de prueba" className="imagen" />
+            <img src={data?.img || ''} loading="lazy" alt="Imagen de prueba" className="imagen animate__animated animate__fadeIn" />
           </Col>
           <Col xs={12} md={12} >
             {buynow}
@@ -95,11 +95,11 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
 
 
 
-          <Link to="/checkout">
+        
 
             <Link to="/cart"><Button variant="danger" className="py-4 px-5  " style={{ width: '30vh' }}>Buy now</Button>  </Link>
 
-          </Link>
+         
         </Col>
 
 
