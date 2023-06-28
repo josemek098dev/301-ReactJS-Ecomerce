@@ -8,7 +8,7 @@ import './ItemCard.css'
 export const ItemCard = ({ playersDataByPosition , idx}) => {
 
   const dataid = playersDataByPosition[idx]?.id
-  console.log('ladata', dataid)
+
 
 
   const buynow = (<Row className="align-self-end flex-column my-2">
@@ -53,7 +53,7 @@ export const ItemCard = ({ playersDataByPosition , idx}) => {
               style={{ textDecoration: "none" }}
               key=""
             >
-              <img src={playersDataByPosition[idx]?.img || ''} alt="Imagen de prueba" className="imagen image-zoom-hover" />
+              <img src={playersDataByPosition[idx]?.img || ''}  loading="lazy" alt="Imagen de prueba" className="imagen image-zoom-hover" />
             </Link>
           </Col>
         </Row>
@@ -70,7 +70,7 @@ export const ItemCard = ({ playersDataByPosition , idx}) => {
               style={{ textDecoration: "none" }}
               key=""
             >
-              <img src={playersDataByPosition[idx]?.img || ''} alt="Imagen de prueba" className="imagen" />
+              <img src={playersDataByPosition[idx]?.img || ''} loading="lazy" alt="Imagen de prueba" className="imagen" />
             </Link>
           </Col>
           <Col xs={12} md={12} >
@@ -90,7 +90,7 @@ export const ItemCard = ({ playersDataByPosition , idx}) => {
               style={{ textDecoration: "none" }}
               key=""
             >
-              <img src={playersDataByPosition[idx]?.img || ''} alt="Imagen de prueba" className="imagen" />
+              <img src={playersDataByPosition[idx]?.img || ''} loading="lazy" alt="Imagen de prueba" className="imagen" />
             </Link>
 
           </Col>

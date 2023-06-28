@@ -8,7 +8,8 @@ import { ItemCardDetail } from './ItemCardDetail';
 export const ItemDetailContainer = ({ isLoading, playersDataByPosition }) => {
 
   return (
-    <Container className="max-width-container mt-5">
+   <div className="bg-custom  ">
+    <Container className="max-width-container align-items-center d-flex" style={{height:'90vh'}}>
       <Row >
         
 
@@ -20,16 +21,12 @@ export const ItemDetailContainer = ({ isLoading, playersDataByPosition }) => {
         playersDataByPosition.map((data) => {
           return <ItemCardDetail  playersDataByPosition={playersDataByPosition} />;
         })
-      )} 
-        
+      )}        
          
       </Row>
-      <Row >
-       
-        <h2>DESC</h2>
-          
-      </Row>
+
       
     </Container>
+    </div>
   );
 };

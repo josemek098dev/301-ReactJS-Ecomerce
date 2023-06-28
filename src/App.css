@@ -1,6 +1,8 @@
 * {
   font-family: 'Public Sans', sans-serif;
-
+ 
+    caret-color: transparent;
+  
 
 }
 
@@ -12,6 +14,7 @@ Button{
 body {
 
   color: #393a49
+  
 }
 
 a{

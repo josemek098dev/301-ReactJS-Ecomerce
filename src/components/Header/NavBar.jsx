@@ -30,7 +30,7 @@ export const NavBar = () => {
         <Container  >
 
           <Navbar.Brand className="brand"><Link to='/' style={{textDecoration:'none'}}><Brands /></Link></Navbar.Brand>
-          <Navbar.Brand className="cart " sticky="top"> <CartWidget /></Navbar.Brand >
+          <Navbar.Brand className="cart " sticky="top"> <Link to='/cart'><CartWidget /></Link></Navbar.Brand >
 
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"

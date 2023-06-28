@@ -10,7 +10,7 @@ export const getPlayerData = async (position, id) => {
 
 
     q = query(collection(db, "playersCollection"), where(documentId(), "==", id));
-    console.log(id)
+
   } else if ((position !== 'allItems') && ' ') {
 
     // OJO CAMBIAR ACA POSITION POR OTRA CATEGORIES

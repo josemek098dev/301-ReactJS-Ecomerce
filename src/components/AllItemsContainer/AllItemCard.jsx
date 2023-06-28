@@ -7,8 +7,12 @@ import './ui/revealimage.css'
 
 
 
-export const AllItemCard = ({ data }) => {
+export const AllItemCard = ({ data , loadState}) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const ChildImgLoaded = () => {
+    loadState(true)
+  }
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -23,10 +27,11 @@ export const AllItemCard = ({ data }) => {
     <div className="box1">
       <div className="content1">
         <img
+          loading="lazy"
           src={data.img}
           alt="Imagen de prueba"
           className="imagen " 
-          
+          onLoad={ChildImgLoaded}         
           />
           
       </div>
