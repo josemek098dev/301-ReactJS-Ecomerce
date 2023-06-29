@@ -7,7 +7,8 @@ import { usePlayerData } from "../hook/usePlayerData";
 export const HomePage = () => {
 
   const { isLoading, playersDataByPosition } = usePlayerData();
-  console.log(playersDataByPosition)
+
+
 
   return (
     <>

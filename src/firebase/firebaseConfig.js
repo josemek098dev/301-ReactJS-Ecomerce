@@ -1,14 +1,19 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+// Import the functions you need from the SDKs you need
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCApwSXKQHxI1vZA_OCLMM1vHPwaJjlYFE",
-  authDomain: "fb-43230-7c3fe.firebaseapp.com",
-  projectId: "fb-43230-7c3fe",
-  storageBucket: "fb-43230-7c3fe.appspot.com",
-  messagingSenderId: "285809636419",
-  appId: "1:285809636419:web:ec42917b15780ddc44d0f6",
+  apiKey: "AIzaSyDnPmyLi_SU7nvoGWy5DAkIEDBiYXu9rmE",
+  authDomain: "fb-43230-jose.firebaseapp.com",
+  projectId: "fb-43230-jose",
+  storageBucket: "fb-43230-jose.appspot.com",
+  messagingSenderId: "856777779834",
+  appId: "1:856777779834:web:26235c59a9ba48f2b129c3"
 };
 
 // Initialize Firebase

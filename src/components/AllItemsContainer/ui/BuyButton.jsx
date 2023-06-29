@@ -3,24 +3,28 @@ import Col from 'react-bootstrap/Col';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Button from 'react-bootstrap/Button';
 
-export const BuyButton = ({ isHovered }) => {
-    const buttonClass = isHovered ? 'dark' : 'light';
-    const buttonText = isHovered ? (
-      <div>
-        <ShoppingCartOutlinedIcon sx={{ mb: 0.1, color: '#f8f9fa' }} style={{ fontSize: 20 }} />
-        {' $99.99'}
-      </div>
-    ) : '$999.99';
-    const buttonClassName = isHovered ? 'px-4 w-100' : 'px-4';
-  
-    return (
-      <Row className="align-self-end flex-column my-2">
-        <Col className="f-14px my-2">Save up to $250 and get 50% on OnePlus Buds Pro 2.</Col>
-        <Col>
-          <Button variant={buttonClass} className={buttonClassName}>
-            {buttonText}
-          </Button>
-        </Col>
-      </Row>
-    );
-  };
+export const BuyButton = ({ isHovered, data }) => {
+  const buttonClassName = isHovered ? 'px-4 w-100' : 'px-4';
+  const buttonClass = isHovered ? 'dark' : 'light';
+  const buttonText = isHovered ? (
+
+    <div>
+      <Col className="my-2 d-7 text-muted" >{data.description}</Col>
+      <Button variant={buttonClass} className={buttonClassName}>
+        <ShoppingCartOutlinedIcon sx={{ mb: 0.5, color: '#f8f9fa', marginRight: '4px' }} style={{ fontSize: 20 }} />
+        ${data.price}
+      </Button>
+    </div>
+  ) : '$ ' + data.price;
+
+
+
+  return (
+    <Row className="align-self-end flex-column my-2">
+      <Col className="my-2 h5" >{data.name.split(' ').slice(0, 4).join(' ')}</Col>
+      <Col>
+        {buttonText}
+      </Col>
+    </Row>
+  );
+};

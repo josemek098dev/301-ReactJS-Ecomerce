@@ -27,9 +27,9 @@ export const App = () => {
           <Header />
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/player-detail/:id" element={<ItemDetailPage />} />
+            <Route path="/item-detail/:id" element={<ItemDetailPage />} />
             <Route
-              path="/category/:position"
+              path="/category/:category"
               element={<ByCategoryItemContainerPage />}
             />
             <Route path="/cart" element={<CartPage />} />

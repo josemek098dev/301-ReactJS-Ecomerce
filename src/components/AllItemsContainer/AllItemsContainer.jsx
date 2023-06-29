@@ -9,6 +9,8 @@ import { useEffect, useState } from 'react';
 
 export const AllItemsContainer = ({ isLoading, playersData }) => {
 
+   
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -21,14 +23,14 @@ export const AllItemsContainer = ({ isLoading, playersData }) => {
 
 
     const RenderPlayers = ({ isLoading, playersData }) => {
-        if (isLoading && !imgLoad) {
+        if (!imgLoad  && isLoading) {
             return <div className='w-100 vh-100 d-flex justify-content-center mt-5'><Spinner /></div>;
         }
 
         return (
             <Row>
-                {playersData.map((data) => (
-                    <AllItemCard data={data} key={data.id} loadState={loadState} />
+                {playersData.map((data) => (      
+                    <AllItemCard data = { data } key = { data.id } loadState = { loadState } />                    
                 ))}
             </Row>
         );
@@ -43,7 +45,7 @@ export const AllItemsContainer = ({ isLoading, playersData }) => {
                     </Col>
 
                     <Col xs={12} sm={12} md={8}>
-                        <h1>hola</h1>
+                        <h5>All - Rank by Recommended</h5>
                         <RenderPlayers isLoading={isLoading} playersData={playersData} />
                     </Col>
                 </Row>

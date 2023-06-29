@@ -102,24 +102,27 @@ export const Cart = () => {
                     <Col md={3} className="align-items-center d-flex justify-content-center">
                       <Card.Img
                         variant="top"
-                        src={item[0].img}
+                        src={item[0].image}
                         alt={item[0].player}
                         style={{ maxHeight: '100%', maxWidth: '100px', objectFit: 'cover' }}
                       />
                     </Col>
 
-                    <Col md={3}>
+                    <Col md={4}>
                       <Card.Body>
-                        <Card.Title>{item[0].player}</Card.Title>
-                        <ListGroup variant="flush">
-                          <ListGroup.Item>Number: {item[0].number}</ListGroup.Item>
-                          <ListGroup.Item>Position: {item[0].position}</ListGroup.Item>
-                        </ListGroup>
+                        <Card.Title>{item[0].name.split(' ').slice(0, 4).join(' ')}</Card.Title>
+                     
+                        
+                          <small className="text-muted">
+                          <ListGroup.Item>Description: {item[0].description.split(' ').slice(0, 9).join(' ')}</ListGroup.Item>
+                          
+                          </small>
+                       
                       </Card.Body>
                     </Col>
 
-                    <Col md={3} className="d-flex align-items-center">
-                      <div>$444</div>
+                    <Col md={2} className="d-flex align-items-center">
+                      <div>$ {item[0].price}</div>
                     </Col>
 
                     <Col md={2} className="align-items-center d-flex ">
@@ -127,8 +130,8 @@ export const Cart = () => {
                         <span className="count-style-but px-2" onClick={() => decrementItem(item[0].id)}>
                           -
                         </span>
-                        <span className="count-style-center px-2">
-                          {itemCounts[item[0].id]}
+                        <span className="count-style-center px-2 ">
+                          <small>{itemCounts[item[0].id]}</small>
                         </span>
                         <span className="count-style-but px-2" onClick={() => incrementItem(item[0].id)}>
                           +

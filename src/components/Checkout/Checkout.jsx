@@ -3,6 +3,8 @@ import { Row, Col, Container } from 'react-bootstrap';
 import { useContext } from "react";
 import { ItemsContext } from "../../context/ItemsContext";
 import Table from "react-bootstrap/Table";
+import { CheckoutForm } from './CheckoutForm';
+
 
 export const Checkout = () => {
     const { items, itemsCount } = useContext(ItemsContext);
@@ -31,8 +33,16 @@ export const Checkout = () => {
     return (
         <Container>
             <Row className='mt-5 d-flex justify-content-center'>
-                <Col md={3} >
-                    <h1>Checkout</h1>
+                <Col md={4} >
+
+                    <h1> Checkout</h1>
+                    <h1><CheckoutForm /></h1>
+
+
+
+
+
+
                 </Col>
                 <Col md={5} >
                     <p style={{ maxWidth: '100%' }}>
