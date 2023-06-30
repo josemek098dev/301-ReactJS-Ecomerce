@@ -6,23 +6,27 @@ import { ItemsContext } from "../../context/ItemsContext";
 import { useContext } from "react";
 import 'animate.css'
 
-export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
+export const ItemCardDetail = ({ itemsByCategory, idx }) => {
 
-  const data = playersDataByPosition[0]
+  const data = itemsByCategory[0]
   const { items, setItems, itemsCount, setItemsCount } = useContext(ItemsContext);
+
+  const offer = (data?.inOffer) ? (data.price / 2).toFixed(2) : data.price;
 
   const buynow = (
 
     <Row className="align-self-end  flex-column my-2 w-100 ">
-     
-      <Col className="h4 my-2">$ {data.price}</Col>
+
+
+      <Col><small style={{ color: 'red' }}>{((data?.inOffer) ? 'Up to 50% OFF' : '')}</small></Col>
+      <Col className="h4 my-2">$ {offer} <small className='text-decoration-line-through text-muted h6'>  { ((data?.inOffer) ? '$' + data.price : '')}</small></Col>
       <Col>
         <Link
-          to={`/player-detail/${data.id}`}
+          to={`/item-detail/${data.id}`}
           style={{ textDecoration: "none" }}
           key=""
         >
-  
+
 
         </Link>
       </Col>
@@ -30,10 +34,10 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
   )
 
   const setfun = () => {
-    setItems([...items, playersDataByPosition]);
-  
-    const itemId = playersDataByPosition[0].id.toString(); // Convertir el ID a string
-  
+    setItems([...items, itemsByCategory]);
+
+    const itemId = itemsByCategory[0].id.toString(); // Convertir el ID a string
+
     setItemsCount((prevItemCounts) => {
       const updatedCounts = {
         ...prevItemCounts,
@@ -44,7 +48,7 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
   };
 
   const image = <img src={data?.image || ''} loading="lazy" alt="Imagen de prueba" className="imagen animate__animated animate__fadeIn" />
-  console.log(data.image)
+ 
 
   return (
     <>
@@ -61,7 +65,7 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
 
               <Col xs={12} md={12} className="f-14px mb-4"><small>Availability: In Stock </small></Col>
               <hr className="f-14px mx-2" />
-           
+
               <Col xs={12} md={12} className=" d-flex justify-content-center w-100 ">
                 {buynow}
               </Col>
@@ -74,7 +78,7 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
         <Row className="bg-custom m-2 py-3 px-1">
           <Col xs={12} md={6} className=" h3 mt-2">OnePlus 10 Pro XS</Col>
           <Col xs={12} md={6}  >
-          {image}
+            {image}
           </Col>
           <Col xs={12} md={12} >
             {buynow}
@@ -90,10 +94,10 @@ export const ItemCardDetail = ({ playersDataByPosition, idx }) => {
 
         <Col md={6} className="d-flex">
 
-          <Button variant="dark" className=" py-4 px-5 " style={{ width: '30vh' }} onClick={() => setfun()}>Add to cart</Button>        
+          <Button variant="dark" className=" py-4 px-5 " style={{ width: '30vh' }} onClick={() => setfun()}>Add to cart</Button>
 
-            <Link to="/cart"><Button variant="danger" className="py-4 px-5  " style={{ width: '30vh' }}>Buy now</Button>  </Link>
-         
+          <Link to="/cart"><Button variant="danger" className="py-4 px-5  " style={{ width: '30vh' }}>Buy now</Button>  </Link>
+
         </Col>
 
 

@@ -15,7 +15,7 @@ export const NavBar = () => {
     setExpanded(!expanded);
   };
 
-  const categories = ['Phones', 'Audio', 'Table', 'Accesories', 'Offers']
+  const categories = ['Phones', 'Audio', 'Tablet', 'Accessories', 'Offers']
 
   return (
     <>
@@ -59,7 +59,7 @@ export const NavBar = () => {
                       setExpanded(false);
                     }}
                     key={category}
-                    to={`/category/${'goalkeeper'}`}
+                    to={`/category/${category.toLowerCase()}`}
                   >
                     {category}
                     {/* TODO: cambiar goalkeeper por category y arreglar firebase */}

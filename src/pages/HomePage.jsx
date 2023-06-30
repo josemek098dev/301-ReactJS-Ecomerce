@@ -6,14 +6,12 @@ import { usePlayerData } from "../hook/usePlayerData";
 
 export const HomePage = () => {
 
-  const { isLoading, playersDataByPosition } = usePlayerData();
-
-
+  const { isLoading, itemsByCategory } = usePlayerData();
 
   return (
     <>
       <BannerStart />
-      <ItemListContainer isLoading={isLoading} playersDataByPosition={playersDataByPosition} />
+      <ItemListContainer isLoading={isLoading} itemsByCategory={itemsByCategory} />
       <BannerEnd />
     </>
   );

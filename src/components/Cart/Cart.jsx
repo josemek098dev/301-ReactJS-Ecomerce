@@ -84,7 +84,7 @@ export const Cart = () => {
 
   setItemsCount(itemCounts)
 
-
+ //const offer = ((data?.category === 'offers') ? (data.price / 2).toFixed(2) : data.price);
 
   return (
     <div className="bg-greycustom">
@@ -103,7 +103,7 @@ export const Cart = () => {
                       <Card.Img
                         variant="top"
                         src={item[0].image}
-                        alt={item[0].player}
+                        alt={item[0].category}
                         style={{ maxHeight: '100%', maxWidth: '100px', objectFit: 'cover' }}
                       />
                     </Col>
@@ -121,8 +121,11 @@ export const Cart = () => {
                       </Card.Body>
                     </Col>
 
-                    <Col md={2} className="d-flex align-items-center">
-                      <div>$ {item[0].price}</div>
+                    <Col md={2} className="d-flex flex-column align-items-center justify-content-center">
+                      <div>$ {((item[0]?.inOffer) ? (item[0].price / 2).toFixed(2) : item[0].price)}</div>
+                      <small className='text-decoration-line-through text-muted'>  { ((item[0]?.inOffer) ? '$' + item[0].price : '')}</small>
+                    
+                    
                     </Col>
 
                     <Col md={2} className="align-items-center d-flex ">

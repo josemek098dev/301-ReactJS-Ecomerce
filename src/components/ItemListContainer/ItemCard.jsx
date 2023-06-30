@@ -5,20 +5,21 @@ import { Link } from "react-router-dom";
 import './ItemCard.css'
 
 
-export const ItemCard = ({ playersDataByPosition , idx}) => {
+export const ItemCard = ({ itemsByCategory, idx }) => {
 
-  const dataid = playersDataByPosition[idx]?.id
+  const dataid = itemsByCategory[idx]?.id
 
-
+  const offer = (itemsByCategory[idx]?.inOffer) ? (itemsByCategory[idx].price / 2).toFixed(2) : itemsByCategory[idx].price;
 
   const buynow = (<Row className="align-self-end flex-column my-2">
-    <Col className="f-14px">Save up to $250 and get 50% on OnePlus Buds Pro 2.</Col>
-    <Col className="h4 my-2">$444</Col>
+    <Col className="f-14px text-muted"><small >{itemsByCategory[idx]?.description.split(' ').slice(0, 10).join(' ')}</small></Col>
+    <small className="f-14px mt-2" style={{color:'red'}}>{ ((itemsByCategory[idx]?.inOffer) ? 'Up to 50% OFF'  : '')}</small>
+    <Col className="h4 mb-2">${offer}<small className='text-decoration-line-through text-muted h6'> { ((itemsByCategory[idx]?.inOffer) ? '$' + itemsByCategory[idx].price : '')}</small></Col>
 
     <Col>
 
       <Link
-         to={`/player-detail/${dataid}`}
+        to={`/item-detail/${dataid}`}
         style={{ textDecoration: "none" }}
         key=""
       >
@@ -31,6 +32,8 @@ export const ItemCard = ({ playersDataByPosition , idx}) => {
   </Row>)
 
 
+  const image = <img src={itemsByCategory[idx]?.image || ''} loading="lazy" alt="Imagen de prueba" className="imagen image-zoom-hover" />
+
 
 
 
@@ -41,7 +44,7 @@ export const ItemCard = ({ playersDataByPosition , idx}) => {
         <Row className="bg-custom m-2 py-3 px-1">
           <Col xs={12} md={6} className=" d-flex justify-content-between ">
             <Row >
-              <Col xs={12} md={12} className=" h3 mt-2">OnePlus 10 Pro</Col>
+              <Col xs={12} md={12} className=" h3 mt-2">{itemsByCategory[idx]?.name}</Col>
               <Col xs={12} md={12} className=" d-flex">{buynow}
 
               </Col>
@@ -49,11 +52,11 @@ export const ItemCard = ({ playersDataByPosition , idx}) => {
           </Col>
           <Col xs={12} md={6} className="  d-flex aling-content-center" >
             <Link
-              to={`/player-detail/${dataid}`}
+              to={`/item-detail/${dataid}`}
               style={{ textDecoration: "none" }}
               key=""
             >
-              <img src={playersDataByPosition[idx]?.img || ''}  loading="lazy" alt="Imagen de prueba" className="imagen image-zoom-hover" />
+                {image}
             </Link>
           </Col>
         </Row>
@@ -63,14 +66,14 @@ export const ItemCard = ({ playersDataByPosition , idx}) => {
 
       <Col xs={12} sm={6} md={6} className="d-none d-sm-block d-lg-none p-0">
         <Row className="bg-custom m-2 py-3 px-1">
-          <Col xs={12} md={12} className=" h3 mt-2">OnePlus 10 Pro</Col>
+          <Col xs={12} md={12} className=" h3 mt-2">{itemsByCategory[idx]?.name}</Col>
           <Col xs={12} md={12} >
             <Link
-              to={`/player-detail/${dataid}`}
+              to={`/item-detail/${dataid}`}
               style={{ textDecoration: "none" }}
               key=""
             >
-              <img src={playersDataByPosition[idx]?.img || ''} loading="lazy" alt="Imagen de prueba" className="imagen" />
+                  {image}
             </Link>
           </Col>
           <Col xs={12} md={12} >
@@ -82,15 +85,15 @@ export const ItemCard = ({ playersDataByPosition , idx}) => {
 
       <Col xs={12} md={6} className="d-block d-sm-none p-0">
         <Row className="bg-custom m-2 py-3 px-1">
-          <Col xs={12} md={6} className=" h3 mt-2">OnePlus 10 Pro</Col>
+          <Col xs={12} md={6} className=" h3 mt-2">{itemsByCategory[idx]?.name}</Col>
           <Col xs={12} md={6}  >
 
             <Link
-               to={`/player-detail/${dataid}`}
+              to={`/item-detail/${dataid}`}
               style={{ textDecoration: "none" }}
               key=""
             >
-              <img src={playersDataByPosition[idx]?.img || ''} loading="lazy" alt="Imagen de prueba" className="imagen" />
+                 {image}
             </Link>
 
           </Col>

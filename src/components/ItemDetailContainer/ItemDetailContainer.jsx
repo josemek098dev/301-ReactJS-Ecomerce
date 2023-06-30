@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { ItemCardDetail } from './ItemCardDetail';
 import { useEffect } from 'react';
 
-export const ItemDetailContainer = ({ isLoading, playersDataByPosition }) => {
+export const ItemDetailContainer = ({ isLoading, itemsByCategory }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,8 +23,8 @@ export const ItemDetailContainer = ({ isLoading, playersDataByPosition }) => {
           Cargando...
         </div>
       ) : (
-        playersDataByPosition.map((data) => {
-          return <ItemCardDetail  playersDataByPosition={playersDataByPosition} />;
+        itemsByCategory.map((data) => {
+          return <ItemCardDetail key={itemsByCategory.id} itemsByCategory={itemsByCategory} />;
         })
       )}        
          

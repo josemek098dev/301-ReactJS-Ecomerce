@@ -4,11 +4,11 @@ import { getPlayerData } from '../helpers/getPlayerData';
 
 export const usePlayerData = () => {
 
-  const [playersDataByPosition, setPlayersByPosition] = useState([]);
+  const [itemsByCategory, setItemsByCategory] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
 
-  const { category = 'phone' } = useParams();
+  const { category = 'phones' } = useParams();
 
   const { id } = useParams();
 
@@ -16,8 +16,8 @@ export const usePlayerData = () => {
   useEffect(() => {
     
     const fetchData = async () => {
-      const playersData = await getPlayerData(category, id);
-      setPlayersByPosition(playersData);
+      const itemsData = await getPlayerData(category, id);
+      setItemsByCategory(itemsData);
       setIsLoading(false);
     };
 
@@ -26,6 +26,6 @@ export const usePlayerData = () => {
     fetchData();
   }, [category, id]);
 
-  return { isLoading, playersDataByPosition };
+  return { isLoading, itemsByCategory };
 
 };

@@ -7,7 +7,7 @@ import { Spinner } from "react-bootstrap";
 
 
 
-export const ItemListContainer = ({ isLoading, playersDataByPosition }) => {
+export const ItemListContainer = ({ isLoading, itemsByCategory }) => {
 
   
   if (isLoading) {
@@ -18,14 +18,14 @@ export const ItemListContainer = ({ isLoading, playersDataByPosition }) => {
     <Container className="max-width-container mt-5">
       <Row >
 
-        <ItemCard playersDataByPosition={playersDataByPosition} isLoading={isLoading} idx={1} />
-        <ItemCard playersDataByPosition={playersDataByPosition} isLoading={isLoading} idx={2} />
+        <ItemCard itemsByCategory={itemsByCategory} isLoading={isLoading} idx={3} />
+        <ItemCard itemsByCategory={itemsByCategory} isLoading={isLoading} idx={0} />
 
       </Row>
       <Row >
 
-        <ItemCard playersDataByPosition={playersDataByPosition} isLoading={isLoading} idx={3} />
-        <ItemCard playersDataByPosition={playersDataByPosition} isLoading={isLoading} idx={4} />
+        <ItemCard itemsByCategory={itemsByCategory} isLoading={isLoading} idx={2} />
+        <ItemCard itemsByCategory={itemsByCategory} isLoading={isLoading} idx={1} />
 
       </Row>
       <Link
@@ -36,7 +36,7 @@ export const ItemListContainer = ({ isLoading, playersDataByPosition }) => {
       >
         <div className="d-flex justify-content-center mt-4 mb-5 hover-right">
           <span className="hold">View all</span>
-          <div className="arrow-container">
+          <div className="arrow-container1">
             <i className="bi bi-chevron-right"></i>
           </div>
         </div>

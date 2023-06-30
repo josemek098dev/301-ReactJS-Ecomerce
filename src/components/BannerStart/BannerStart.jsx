@@ -10,10 +10,21 @@ import 'animate.css'
 export const BannerStart = () => {
 
   const buynow = (<Row className="align-self-end flex-column my-2">
-    <Col className="h4 my-2">from $444</Col>
+    <Col className="h4 my-2">from $429.99</Col>
     <Col className="f-14px">Save up to $250 and get 50% on OnePlus Buds Pro 2.</Col>
 
-    <Col><Button variant="light" size="sm" className="px-4 mt-2" >Buy now</Button></Col>
+    <Col><Button variant="light" size="sm" className="px-4 mt-2" >
+      <Link
+        to={`/item-detail/enFii7O8j7QpI58J9s9s`}
+        style={{ textDecoration: "none" }}
+        key=""
+      >
+        Buy now
+        </Link >
+
+    </Button>
+
+    </Col>
   </Row>)
 
 
@@ -24,7 +35,7 @@ export const BannerStart = () => {
         <Row className="bg-custom-dark m-0 py-3 px-5">
           <Col xs={12} md={6} className=" d-flex justify-content-between ">
             <Row >
-              <Col xs={12} md={12} className=" h3 mt-2">OnePlus 10 Pro</Col>
+              <Col xs={12} md={12} className=" h3 mt-2">EvoPlus 19T 5G</Col>
               <Col xs={12} md={12} className=" d-flex">{buynow}
 
               </Col>

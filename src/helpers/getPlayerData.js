@@ -3,17 +3,31 @@ import { db } from "../firebase/firebaseConfig";
 
 export const getPlayerData = async (category, id) => {
 
+
+
   let q;
   if (id) {
     
     q = query(collection(db, "itemscollection"), where(documentId(), "==", id));
 
-  } else if ((category !== 'allItems') && ' ') {
-    // OJO CAMBIAR ACA POSITION POR OTRA CATEGORIES
-    // TALVEZ AGREGAR UNA CATEGORIA HOME PARA LOS ITEMS DEL HOME
-    q = query(collection(db, "itemscollection"), where("position", "==", category));
+  } else if (category === 'offers') {
+
+   
+
+    q = query(collection(db, "itemscollection"), where("inOffer", "==", true));
+
+
+  } else if (category !== 'allItems' && category !== '') {
+
+   
+
+    q = query(collection(db, "itemscollection"), where("category", "==", category));
+
+
 
   } else {
+
+  
 
     q = query(collection(db, "itemscollection"));
 
