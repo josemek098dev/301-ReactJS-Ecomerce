@@ -11,7 +11,7 @@ export const BannerStart = () => {
 
   const buynow = (<Row className="align-self-end flex-column my-2">
     <Col className="h4 my-2">from $429.99</Col>
-    <Col className="f-14px">Save up to $250 and get 50% on OnePlus Buds Pro 2.</Col>
+    <Col className="f-14px">Save up 50% on EvoPlus Buds Pro 20.</Col>
 
     <Col><Button variant="light" size="sm" className="px-4 mt-2" >
       <Link
@@ -49,7 +49,7 @@ export const BannerStart = () => {
 
       <Col xs={12} sm={12} md={12} className="d-none d-sm-block d-lg-none p-0 mt-5">
         <Row className="bg-custom-dark m-2 py-3 px-1">
-          <Col xs={12} md={12} className=" h3 mt-2">OnePlus 10 Pro</Col>
+          <Col xs={12} md={12} className=" h3 mt-2">EvoPlus 19T 5G</Col>
           <Col xs={12} md={12} ><img src="/assets/imgbgs.png" alt="Imagen de prueba" className="image-banner image image-banner-margin2" /></Col>
           <Col xs={12} md={12} >
             {buynow}

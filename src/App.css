@@ -65,3 +65,9 @@ a{
   width: 15px !important;
   min-width: 0px !important;
 }
+
+.modal-content  {
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important; 
+}

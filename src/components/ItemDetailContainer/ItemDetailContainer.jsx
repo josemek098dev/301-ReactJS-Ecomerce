@@ -24,7 +24,7 @@ export const ItemDetailContainer = ({ isLoading, itemsByCategory }) => {
         </div>
       ) : (
         itemsByCategory.map((data) => {
-          return <ItemCardDetail key={itemsByCategory.id} itemsByCategory={itemsByCategory} />;
+          return <ItemCardDetail key={data.id} itemsByCategory={itemsByCategory} />;
         })
       )}        
          

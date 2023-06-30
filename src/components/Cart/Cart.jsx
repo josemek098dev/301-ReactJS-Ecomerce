@@ -7,8 +7,8 @@ import './Cart.css'
 import { Link } from "react-router-dom";
 
 export const Cart = () => {
-  const { items, setItems, itemsCount, setItemsCount } = useContext(ItemsContext);
-  
+
+  const { items, setItems, itemsCount, setItemsCount } = useContext(ItemsContext); 
 
 
   const itemCountMap = new Map();
@@ -75,16 +75,19 @@ export const Cart = () => {
   
 
   const totalPrice = uniqueItems.reduce((total, { item }) => {
-    const itemPrice = 444; // Reemplaza con el valor real
+  
+    const itemPrice = ((item[0]?.inOffer) ? (item[0].price / 2).toFixed(2) : item[0].price);  // a modo de ejemplo se puso una oferta de 50% 
     const itemCount = itemCounts[item[0].id];
+   
     return total + itemPrice * itemCount;
   }, 0);
 
   const totalItemCount = Object.values(itemCounts).reduce((total, count) => total + count, 0);
 
-  setItemsCount(itemCounts)
+  useEffect(() => {
+    setItemsCount(itemCounts);
+  }, [itemCounts]);
 
- //const offer = ((data?.category === 'offers') ? (data.price / 2).toFixed(2) : data.price);
 
   return (
     <div className="bg-greycustom">
@@ -157,7 +160,7 @@ export const Cart = () => {
 
       <Row className="barra-horizontal align-items-center m-0">
         <Col className="text-left h4 mt-3 d-flex justify-content-center">
-          Total: ${totalPrice}
+          Total: ${totalPrice.toFixed(2)}
         </Col>
         <Col md={3} className="d-flex align-items-stretch justify-content-center d-flex  m-0 ">
           <Link to="/checkout">

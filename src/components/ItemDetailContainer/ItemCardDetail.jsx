@@ -76,10 +76,12 @@ export const ItemCardDetail = ({ itemsByCategory, idx }) => {
 
       <Col xs={12} md={6} className="d-block d-sm-none p-0">
         <Row className="bg-custom m-2 py-3 px-1">
-          <Col xs={12} md={6} className=" h3 mt-2">OnePlus 10 Pro XS</Col>
+
           <Col xs={12} md={6}  >
             {image}
           </Col>
+          <Col xs={12} md={6} className=" h3 mt-2">{data.name}</Col>
+          <Col xs={12} md={12} className="f-14px text-muted mb-4">{data.description}</Col>
           <Col xs={12} md={12} >
             {buynow}
           </Col>
