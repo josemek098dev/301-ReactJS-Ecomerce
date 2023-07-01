@@ -97,10 +97,7 @@ export const Checkout = () => {
                                             <Col md={4} className="d-flex flex-column align-items-center justify-content-center ">
                                                 <div>$ {((item[0]?.inOffer) ? (item[0].price / 2).toFixed(2) : item[0].price)}</div>
                                                 <small className='text-decoration-line-through text-muted'>  {((item[0]?.inOffer) ? '$' + item[0].price : '')}</small>
-
                                             </Col>
-
-
 
                                         </Row>
                                     </Card>

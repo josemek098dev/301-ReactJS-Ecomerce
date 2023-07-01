@@ -99,9 +99,15 @@ export const CheckoutForm = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    const isEmpty = Object.values(values).some((value) => value.trim() === '');
+    if (isEmpty) {
+      return; // Detener el envío del formulario
+    }
+
+
     const hasErrors = Object.values(errors).some((error) => error);
     if (hasErrors) {
-      return; // No envía el formulario si hay errores
+      return; 
     }
 
     const products = uniqueItems.reduce((obj, { item, count }) => {
@@ -135,6 +141,7 @@ export const CheckoutForm = () => {
             value={values.email}
             onChange={handleOnChange}
             className={errors.email ? 'is-invalid' : ''}
+            required
           />
           {errors.email && (
             <div className="invalid-feedback fs-6 m-2">
@@ -150,6 +157,7 @@ export const CheckoutForm = () => {
             value={values.phone}
             onChange={handleOnChange}
             className={errors.phone ? 'is-invalid' : ''}
+            required
           />
           {errors.phone && (
             <div className="invalid-feedback fs-6 m-2">
@@ -173,6 +181,7 @@ export const CheckoutForm = () => {
                   value={values.firstName}
                   onChange={handleOnChange}
                   className={errors.firstName ? 'is-invalid' : ''}
+                  required
                 />
                 {errors.firstName && (
                   <div className="invalid-feedback fs-6 m-2">
@@ -189,6 +198,7 @@ export const CheckoutForm = () => {
                   value={values.lastName}
                   onChange={handleOnChange}
                   className={errors.lastName ? 'is-invalid' : ''}
+                  required
                 />
                 {errors.lastName && (
                   <div className="invalid-feedback fs-6 m-2">
@@ -206,6 +216,7 @@ export const CheckoutForm = () => {
               value={values.address}
               onChange={handleOnChange}
               className={errors.address ? 'is-invalid' : ''}
+              required
             />
             {errors.address && (
               <div className="invalid-feedback fs-6 m-2">

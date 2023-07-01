@@ -83,7 +83,7 @@ export const Cart = () => {
   }, 0);
 
   const totalItemCount = Object.values(itemCounts).reduce((total, count) => total + count, 0);
-
+  const isCheckoutDisabled = totalItemCount === 0;
   useEffect(() => {
     setItemsCount(itemCounts);
   }, [itemCounts]);
@@ -164,7 +164,7 @@ export const Cart = () => {
         </Col>
         <Col md={3} className="d-flex align-items-stretch justify-content-center d-flex  m-0 ">
           <Link to="/checkout">
-            <Button variant="danger" className="py-4 px-5 but">
+            <Button variant="danger" className="py-4 px-5 but"  disabled={isCheckoutDisabled}>
               Checkout ({totalItemCount})
             </Button>
           </Link>
