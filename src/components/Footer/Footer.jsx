@@ -48,7 +48,7 @@ export const Footer = () => {
                         <div className="col-md-8 col-sm-6 col-xs-12">
                             <p className="copyright-text">
                                 Copyright &copy; 2023 All Rights Reserved by{' '}
-                                <a href="#">EVOPLUS</a>.
+                                <a href="#">EVOPLUS - By Jose Alberto Cordoba</a>.
                             </p>
                         </div>
 

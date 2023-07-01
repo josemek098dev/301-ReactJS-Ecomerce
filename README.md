@@ -1,5 +1,5 @@
 
-![E-CART](public/img-preentrega1Cordoba.PNG)
+![EVOPLUS](public/img-EFJOSECORDOBA.PNG)
 
 ### Descripción:
 
@@ -9,14 +9,11 @@ Este repositorio de ejemplo es un proyecto de e-commerce básico desarrollado co
  - Y luego para iniciar en el proyecto ejecutar: `npm run dev`
  - Ir a http://localhost:5173/
 
-### Pre-entrega2
 
-Puedes acceder aqui para ver el estado actual 👇
+Puedes acceder aqui para ver la entrega 👇
 
-[🛒 E-CART](https://64828bfe6c0d54074578f4e1--splendid-daffodil-32ebf0.netlify.app/)
+[EVOPLUS](https://649f7bd7ac33f7641bfd46f5--starlit-sable-7acd1c.netlify.app/)
 
-Gif de funcionamiento :
 
-![E-CART](public/pre2.gif)
 
 
