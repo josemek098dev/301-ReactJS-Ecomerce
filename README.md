@@ -12,7 +12,7 @@ Este repositorio de ejemplo es un proyecto de e-commerce básico desarrollado co
 
 Puedes acceder aqui para ver la entrega 👇
 
-[EVOPLUS](https://649f7bd7ac33f7641bfd46f5--starlit-sable-7acd1c.netlify.app/)
+[EVOPLUS](https://649f7dd213d46c5fe95484f4--starlit-sable-7acd1c.netlify.app/)
 
 
 
