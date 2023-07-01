@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+
 // Import the functions you need from the SDKs you need
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -8,7 +9,7 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDnPmyLi_SU7nvoGWy5DAkIEDBiYXu9rmE",
+  apiKey: import.meta.env.VITE_API_KEY,
   authDomain: "fb-43230-jose.firebaseapp.com",
   projectId: "fb-43230-jose",
   storageBucket: "fb-43230-jose.appspot.com",
